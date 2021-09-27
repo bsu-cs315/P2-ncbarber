@@ -3,7 +3,7 @@
 ## How to Play
 
 Controls
-- 
+- D - To move forward
 
 ## Reflection
 
