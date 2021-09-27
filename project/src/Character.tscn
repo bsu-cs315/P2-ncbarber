@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/launcherMan3.png" type="Texture" id=1]
 [ext_resource path="res://assets/launcherMan2.png" type="Texture" id=2]
 [ext_resource path="res://assets/launcherMan1.png" type="Texture" id=3]
+[ext_resource path="res://src/Character.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,6 +17,7 @@ animations = [ {
 extents = Vector2( 7.95205, 10.2683 )
 
 [node name="Character" type="KinematicBody2D"]
+script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
