@@ -11,6 +11,10 @@ var velocity = Vector2()
 func _physics_process(delta):
 	velocity.x = 0
 
+	if velocity.x == 0 and is_on_floor():
+		$AnimatedSprite.animation = "idle"
+		$AnimatedSprite.play()
+		
 	if Input.is_action_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jumpPower
@@ -23,6 +27,12 @@ func _physics_process(delta):
 			jumpped = true
 			$AnimatedSprite.animation = "jumping"
 			$AnimatedSprite.play()
+			
+	if Input.is_action_pressed("down"):
+		if is_on_floor() and velocity.x == 0:
+			$AnimatedSprite.animation = "ducking"
+			$AnimatedSprite.play()
+		
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
 		if is_on_floor():
@@ -34,14 +44,6 @@ func _physics_process(delta):
 		if is_on_floor():
 			$AnimatedSprite.animation = "walking"
 			$AnimatedSprite.flip_h = true
-			$AnimatedSprite.play()
-	
-	if velocity.x == 0 and is_on_floor():
-		$AnimatedSprite.animation = "idle"
-		$AnimatedSprite.play()
-	if Input.is_action_pressed("down"):
-		if is_on_floor() and velocity.x == 0:
-			$AnimatedSprite.animation = "ducking"
 			$AnimatedSprite.play()
 	
 	velocity.y += gravity * delta
