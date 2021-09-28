@@ -27,11 +27,11 @@ Controls
 - [X] B-2: The source code and project structure comply with our adopted style guides.
 - [ ] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
 - [ ] B-4: The camera follows the character through a world that is larger than one screen.
-- [ ] A-1: Generate neither warnings nor errors at runtime.
+- [X] A-1: Generate neither warnings nor errors at runtime.
 - [ ] A-2: Earn one star
-- [ ] ⭐ Animate the main character using either <code>AnimatedSprite</code> or cutout animation
-- [ ] ⭐ Include parallax scrolling in the background.
-- [ ] ⭐ Include tiles that can be passed in one direction, such as being able to jump up through a tile and land atop it.
+- [X] ⭐ Animate the main character using either <code>AnimatedSprite</code> or cutout animation
+- [X] ⭐ Include parallax scrolling in the background.
+- [X] ⭐ Include tiles that can be passed in one direction, such as being able to jump up through a tile and land atop it.
 
 
 ## Third-Party Resources
