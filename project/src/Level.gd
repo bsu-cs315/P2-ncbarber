@@ -33,4 +33,4 @@ func _on_Coin_Entered(body, coin):
 		print("Score: ", score)
 
 func restart_level():
-	var _restart = get_tree().change_scene("res://src/Level.tscn")
+	var _restart = get_tree().change_scene("res://src/Title.tscn")

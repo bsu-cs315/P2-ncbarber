@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/FrancoisOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/Title.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="Title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -984.0
+margin_bottom = -560.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = -0.525
+anchor_top = -0.275
+anchor_right = 25.975
+anchor_bottom = 15.3
+color = Color( 0.701961, 0.443137, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartGame" type="Button" parent="."]
+margin_left = 415.0
+margin_top = 350.0
+margin_right = 576.0
+margin_bottom = 402.0
+custom_fonts/font = SubResource( 1 )
+text = "Start Game"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 105.0
+margin_top = 55.0
+margin_right = 877.0
+margin_bottom = 147.0
+custom_fonts/font = SubResource( 2 )
+text = "Dude with a Rocket Launcher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="StartGame" to="." method="_on_StartGame_pressed"]

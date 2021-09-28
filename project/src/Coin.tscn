@@ -5,11 +5,11 @@
 [ext_resource path="res://assets/coin/coinFrame3.png" type="Texture" id=3]
 [ext_resource path="res://assets/coin/coinFrame2.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 263.57
 height = 94.9777
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -22,11 +22,11 @@ animations = [ {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.00411963, -0.590584 )
 scale = Vector2( 0.1, 0.1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
-frame = 1
+frame = 5
 playing = true
