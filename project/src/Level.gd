@@ -11,7 +11,7 @@ func _process(_delta):
 
 func make_player():
 	character = load("res://src/Character.tscn").instance()
-	character.position = Vector2(150,400)
+	character.position = Vector2(100,500)
 	call_deferred("add_child", character)
 
 func restart_level():
