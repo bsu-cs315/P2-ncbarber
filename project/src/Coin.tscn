@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/coin/coinFrame.png" type="Texture" id=1]
+[ext_resource path="res://assets/coin/coinFrame4.png" type="Texture" id=2]
+[ext_resource path="res://assets/coin/coinFrame3.png" type="Texture" id=3]
+[ext_resource path="res://assets/coin/coinFrame2.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 263.57
+height = 94.9777
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Coin" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.00411963, -0.590584 )
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
