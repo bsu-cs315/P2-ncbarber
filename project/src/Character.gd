@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-var gravity = 600
-var jumpPower = -350
-var rocketJump = -500
-var speed = 200
+var gravity := 600
+var jumpPower := -350
+var rocketJumpPower := -500
+var speed := 250
 #var currentGravity = gravity
 var jumpped = false
+var rocketJumpped = false
 var velocity = Vector2()
 
 func _physics_process(delta):
@@ -21,11 +22,12 @@ func _physics_process(delta):
 			jumpped = true
 			$AnimatedSprite.animation = "jumping"
 			$AnimatedSprite.play()
+			
 	if Input.is_action_pressed("rocket_launch"):
 		if is_on_floor():
-			velocity.y = rocketJump
-			jumpped = true
-			$AnimatedSprite.animation = "jumping"
+			velocity.y = rocketJumpPower
+			rocketJumpped = true
+			$AnimatedSprite.animation = "rocket"
 			$AnimatedSprite.play()
 			
 	if Input.is_action_pressed("down"):
@@ -35,16 +37,27 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
-		if is_on_floor():
+		if is_on_floor() and not rocketJumpped:
 			$AnimatedSprite.animation = "walking"
-			$AnimatedSprite.flip_h = false
 			$AnimatedSprite.play()
+			$AnimatedSprite.flip_h = false
+
+		if is_on_floor() and not jumpped:
+			$AnimatedSprite.animation = "walking"
+			$AnimatedSprite.play()
+			$AnimatedSprite.flip_h = false
+						
 	if Input.is_action_pressed("left"):
 		velocity.x -= speed
-		if is_on_floor():
+		if is_on_floor() and not rocketJumpped:
 			$AnimatedSprite.animation = "walking"
-			$AnimatedSprite.flip_h = true
 			$AnimatedSprite.play()
+			$AnimatedSprite.flip_h = true
+		if is_on_floor() and not jumpped:
+			$AnimatedSprite.animation = "walking"
+			$AnimatedSprite.play()
+			$AnimatedSprite.flip_h = true
+			
 	
 	velocity.y += gravity * delta
 	if jumpped and is_on_floor():

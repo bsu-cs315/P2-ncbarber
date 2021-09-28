@@ -1,9 +1,16 @@
 # Project 2 Iteration 1
 
+## Bro with a RocketLauncher
+#
 ## How to Play
 
+
+
 Controls
-- D - To move forward
+- W or Up Arrow to Jump
+- A or Left Arrow to move left
+- D or Right Arrow to move right
+- Space to Rocket Launch!
 
 ## Reflection
 
