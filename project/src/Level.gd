@@ -1,10 +1,15 @@
 extends Node2D
 
 var character : KinematicBody2D
+var HUD : Sprite
+var score = 0
 
 func _ready():
 	spawn_player()
 	spawn_coin(Vector2(250, 450))
+	spawn_coin(Vector2(670, 325))
+	spawn_coin(Vector2(1680, 100))
+	spawn_coin(Vector2(2460,85))
 
 func _process(_delta):
 	if Input.is_action_pressed("restart"):
@@ -24,6 +29,8 @@ func spawn_coin(spawnPosition):
 func _on_Coin_Entered(body, coin):
 	if body == character:
 		coin.queue_free()
+		score += 10
+		print("Score: ", score)
 
 func restart_level():
 	var _restart = get_tree().change_scene("res://src/Level.tscn")

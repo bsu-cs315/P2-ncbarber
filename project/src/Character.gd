@@ -4,7 +4,6 @@ var gravity := 600
 var jumpPower := -350
 var rocketJumpPower := -500
 var speed := 250
-#var currentGravity = gravity
 var jumpped = false
 var rocketJumpped = false
 var velocity = Vector2()
@@ -20,6 +19,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jumpPower
 			jumpped = true
+			$AnimatedSprite.stop()
 			$AnimatedSprite.animation = "jumping"
 			$AnimatedSprite.play()
 			
@@ -27,6 +27,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = rocketJumpPower
 			rocketJumpped = true
+			$AnimatedSprite.stop()
 			$AnimatedSprite.animation = "rocket"
 			$AnimatedSprite.play()
 			
