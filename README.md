@@ -40,6 +40,7 @@ This iteration I had a very enjoyable time taking this more down a path that I w
 - [X] ⭐ Include parallax scrolling in the background.
 - [X] ⭐ Include tiles that can be passed in one direction, such as being able to jump up through a tile and land atop it.
 
+With all of these requirments, after looking over all of them, I believe that I have done more than enough require to recieve an A for this iteration.
 
 ## Third-Party Resources
 
