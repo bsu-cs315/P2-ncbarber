@@ -26,7 +26,7 @@ Controls
 - [ ] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The source code and project structure comply with our adopted style guides.
 - [ ] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
-- [ ] B-4: The camera follows the character through a world that is larger than one screen.
+- [X] B-4: The camera follows the character through a world that is larger than one screen.
 - [X] A-1: Generate neither warnings nor errors at runtime.
 - [ ] A-2: Earn one star
 - [X] ⭐ Animate the main character using either <code>AnimatedSprite</code> or cutout animation
