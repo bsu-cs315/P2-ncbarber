@@ -1,7 +1,7 @@
 # Project 2 Iteration 1
 
 ## Dude with a RocketLauncher
-#
+
 ## How to Play
 
 
