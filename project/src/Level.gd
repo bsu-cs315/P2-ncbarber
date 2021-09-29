@@ -21,15 +21,15 @@ func spawn_player():
 	character = load("res://src/Character.tscn").instance()
 	character.position = Vector2(100,500)
 	call_deferred("add_child", character)
-	
-	
+
+
 func spawn_coin(spawnPosition):
-	var coin := load("res://src/Coin.tscn").instance()
-	var _connection = coin.connect("body_entered", self, "_on_Coin_Entered", [coin])
+	var coin : Area2D = load("res://src/Coin.tscn").instance()
+	var _connection := coin.connect("body_entered", self, "_on_Coin_Entered", [coin])
 	coin.position = spawnPosition
 	call_deferred("add_child", coin)
-	
-	
+
+
 func _on_Coin_Entered(body, coin):
 	if body == character:
 		coin.queue_free()
