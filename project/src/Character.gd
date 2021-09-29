@@ -4,9 +4,9 @@ var gravity := 600
 var jumpPower := -350
 var rocketJumpPower := -500
 var speed := 250
-var jumpped = false
-var rocketJumpped = false
-var velocity = Vector2()
+var jumpped := false
+var rocketJumpped := false
+var velocity := Vector2()
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -33,6 +33,7 @@ func _physics_process(delta):
 		
 	if rocketJumpped and is_on_floor():
 		rocketJumpped = false
+		
 	velocity = move_and_slide(velocity, Vector2(0,-1))
 	
 	

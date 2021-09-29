@@ -38,4 +38,4 @@ func _on_Coin_Entered(body, coin):
 
 
 func restart_level():
-	var _restart = get_tree().change_scene("res://src/Title.tscn")
+	var _restart := get_tree().change_scene("res://src/Title.tscn")
