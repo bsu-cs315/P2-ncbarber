@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/coin/coinFrame.png" type="Texture" id=1]
 [ext_resource path="res://assets/coin/coinFrame4.png" type="Texture" id=2]
 [ext_resource path="res://assets/coin/coinFrame3.png" type="Texture" id=3]
 [ext_resource path="res://assets/coin/coinFrame2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Sprites/spotlight_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Sprites/spotlight_8.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 263.57
 height = 94.9777
+
+[sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -17,6 +22,26 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.542969, 0.534485, 0, 1, 0.214844, 0.211487, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 33.98
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+scale_random = 0.15
+color_ramp = SubResource( 6 )
+
 [node name="Coin" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,9 +49,20 @@ position = Vector2( -0.00411963, -0.590584 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
 
+[node name="Backlight" type="Sprite" parent="."]
+visible = false
+material = SubResource( 3 )
+texture = ExtResource( 5 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 5
+frame = 3
 playing = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 4 )
+amount = 7
+process_material = SubResource( 7 )
+texture = ExtResource( 6 )

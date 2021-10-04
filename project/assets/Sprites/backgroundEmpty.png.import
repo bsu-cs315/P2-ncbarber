@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/launcherMan2.png-5be889af2e128e7516966932f354dbf7.stex"
+path="res://.import/backgroundEmpty.png-eb87b598a3ce362bbf13a9af1a1f4c17.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/launcherMan2.png"
-dest_files=[ "res://.import/launcherMan2.png-5be889af2e128e7516966932f354dbf7.stex" ]
+source_file="res://assets/Sprites/backgroundEmpty.png"
+dest_files=[ "res://.import/backgroundEmpty.png-eb87b598a3ce362bbf13a9af1a1f4c17.stex" ]
 
 [params]
 

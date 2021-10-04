@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/launcherMan.png-2ae31d59868985fe721dde98dfc2028d.stex"
+path="res://.import/tiles.png-68362b9885055d0cdbb6fac513b9eda6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/launcherMan.png"
-dest_files=[ "res://.import/launcherMan.png-2ae31d59868985fe721dde98dfc2028d.stex" ]
+source_file="res://assets/Sprites/tiles.png"
+dest_files=[ "res://.import/tiles.png-68362b9885055d0cdbb6fac513b9eda6.stex" ]
 
 [params]
 
