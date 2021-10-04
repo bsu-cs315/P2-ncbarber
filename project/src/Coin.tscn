@@ -1,18 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/coin/coinFrame.png" type="Texture" id=1]
 [ext_resource path="res://assets/coin/coinFrame4.png" type="Texture" id=2]
 [ext_resource path="res://assets/coin/coinFrame3.png" type="Texture" id=3]
 [ext_resource path="res://assets/coin/coinFrame2.png" type="Texture" id=4]
-[ext_resource path="res://assets/Sprites/spotlight_1.png" type="Texture" id=5]
 [ext_resource path="res://assets/Sprites/spotlight_8.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 263.57
 height = 94.9777
-
-[sub_resource type="CanvasItemMaterial" id=3]
-blend_mode = 1
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -48,11 +44,6 @@ color_ramp = SubResource( 6 )
 position = Vector2( -0.00411963, -0.590584 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
-
-[node name="Backlight" type="Sprite" parent="."]
-visible = false
-material = SubResource( 3 )
-texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )

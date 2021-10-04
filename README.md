@@ -48,3 +48,4 @@ With all of these requirments, after looking over all of them, I believe that I 
 - [Kenny's Background Elements Redux](https://kenney.nl/assets/background-elements-redux), licensed under 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 - [Francois One Designed by Vernon Adams](https://fonts.google.com/specimen/Francois+One#standard-styles), licensed under [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- [Raffaele Picc - raffaelepicca.com](https://github.com/RPicster/Godot-particle-and-vfx-textures), licensed under [CC0 1.0 Universial](https://github.com/RPicster/Godot-particle-and-vfx-textures/blob/main/LICENSE)
