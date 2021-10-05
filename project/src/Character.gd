@@ -36,9 +36,8 @@ func _physics_process(delta):
 	_process_animation()
 	velocity.y += gravity * delta
 	# This is the control for Camera Shake
-	# This happens when there is not a collision happening and someone hits spacebar (rocket jump)
-	var collision = move_and_collide(velocity * delta)
-	if !collision and rocketJumpped:
+	# This happens when someone hits spacebar (rocket jump)
+	if rocketJumpped:
 		$Camera/ScreenShake.start()
 	
 	if jumpped and is_on_floor():
