@@ -2,7 +2,8 @@ extends Node2D
 
 var character : KinematicBody2D
 var HUD : Sprite
-var score := 0
+var score := 5
+var timer := 0
 
 func _ready():
 	spawn_player()
@@ -15,6 +16,8 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_pressed("restart"):
 		restart_level()
+	
+	$HUD/Score.text = "Coins Left: %d" % score
 
 
 func spawn_player():
@@ -33,7 +36,7 @@ func spawn_coin(spawnPosition):
 func _on_Coin_Entered(body, coin):
 	if body == character:
 		coin.queue_free()
-		score += 10
+		score -= 1
 		print("Score: ", score)
 
 
