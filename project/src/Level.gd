@@ -6,13 +6,15 @@ var score := 5
 var timer := 0
 var running := true
 
+
 func _ready():
 	$MainTheme.play()
+	spawn_player()
 	var randomNumber : RandomNumberGenerator = RandomNumberGenerator.new()
 	randomNumber.randomize()
-	spawn_player()
 	spawn_coin(Vector2(670, 325))
-	
+	# Here we are generating a random number for some variation and replayability
+	# I have some set points and some that are randomized
 	var generatedNumber := randi()%4+1
 	if generatedNumber == 1:
 		spawn_coin(Vector2(-323, 217))
@@ -46,6 +48,7 @@ func _process(_delta):
 		var _game_over := get_tree().change_scene("res://src/Winner.tscn")
 		
 	elif timer == 0:
+		# Run Game Over Screen
 		var _game_over := get_tree().change_scene("res://src/GameOver.tscn")
 
 	if Input.is_action_pressed("restart"):
@@ -74,3 +77,4 @@ func _on_Coin_Entered(body, coin):
 
 func restart_level():
 	var _restart := get_tree().change_scene("res://src/Title.tscn")
+

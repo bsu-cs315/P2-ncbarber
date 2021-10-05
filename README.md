@@ -22,6 +22,7 @@ I am really looking forward to building more things that I but this level of ide
 ## Juice
 
 First Item added for juice was particles for the character, as well as particles for the coins.
+The second item that I added for some "juiciness" was a screenshake whenever the character uses their rocket jump!
 
 
 ## Self-Evaluation
@@ -40,14 +41,14 @@ First Item added for juice was particles for the character, as well as particles
 - [X] C-9: The player's character falls down when walking off a ledge.
 - [X] C-10: Include a full player experience loop: title, gameplay, end.
 - [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
-- [X] B-2: The source code and project structure comply with our adopted style guides.
+- [ ] B-2: The source code and project structure comply with our adopted style guides.
 - [X] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
 - [X] B-4: The camera follows the character through a world that is larger than one screen.
 - [X] B-5: Include sound effects and music.
 - [X] B-6: Include a HUD that tracks game-appropriate data such as score or time remaining.
 - [X] B-7: Include a clear example of <em>juice</em> and describe it in the <code>README.md</code>.
 - [X] A-1: Generate neither warnings nor errors at runtime.
-- [ ] A-2: Include two clear examples of <em>juice</em> and describe them in the <code>README.md</code>.
+- [X] A-2: Include two clear examples of <em>juice</em> and describe them in the <code>README.md</code>.
 - [X] A-3: Earn two stars.
 - [X] ⭐ Animate the main character using either <code>AnimatedSprite</code> or cutout animation
 - [X] ⭐ Include parallax scrolling in the background.

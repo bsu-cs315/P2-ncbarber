@@ -13,6 +13,7 @@ var air_time := 0
 
 func _physics_process(delta):
 	velocity.x = 0
+	# Checking for when certian Controls are pressed
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
 
@@ -29,9 +30,12 @@ func _physics_process(delta):
 			velocity.y = rocketJumpPower
 			rocketJumpped = true
 			
+	# _process_animation() is called and is a function later that runs animations based off
+	# the controls that are being checked
 	_process_animation()
 	velocity.y += gravity * delta
-	
+	# This is the control for Camera Shake
+	# This happens when there is not a collision happening and someone hits spacebar (rocket jump)
 	var collision = move_and_collide(velocity * delta)
 	if !collision and rocketJumpped:
 		$Camera/ScreenShake.start()
