@@ -16,10 +16,11 @@ func _ready():
 	# Here we are generating a random number for some variation and replayability
 	# I have some set points and some that are randomized
 	var generatedNumber := randi()%4+1
+	print(generatedNumber)
 	if generatedNumber == 1:
-		spawn_coin(Vector2(-323, 217))
 		spawn_coin(Vector2(3040, -934))
 		spawn_coin(Vector2(2932, 715))
+		spawn_coin(Vector2(2525, -290))
 		spawn_coin(Vector2(randomNumber.randi_range(1050, 2585), 465))
 	elif generatedNumber == 2:
 		spawn_coin(Vector2(0, -530))
@@ -32,7 +33,7 @@ func _ready():
 		spawn_coin(Vector2(1312, 144))
 		spawn_coin(Vector2(randomNumber.randi_range(378, 1425), -703))
 	elif generatedNumber == 4:
-		spawn_coin(Vector2(2525, -290))
+		spawn_coin(Vector2(-323, 217))
 		spawn_coin(Vector2(1700, 90))
 		spawn_coin(Vector2(3313, -493))
 		spawn_coin(Vector2(randomNumber.randi_range(2745, 3335), 15))
