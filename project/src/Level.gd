@@ -7,6 +7,7 @@ var timer := 0
 var running := true
 
 func _ready():
+	$MainTheme.play()
 	var randomNumber : RandomNumberGenerator = RandomNumberGenerator.new()
 	randomNumber.randomize()
 	spawn_player()

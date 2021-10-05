@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/fonts/FrancoisOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Title.gd" type="Script" id=2]
+[ext_resource path="res://assets/sounds/DWRLIntroSong.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/rocket_jump/RocketJump.png" type="Texture" id=6]
 [ext_resource path="res://assets/rocket_jump/RocketJump3.png" type="Texture" id=8]
 [ext_resource path="res://assets/rocket_jump/RocketJump2.png" type="Texture" id=9]
@@ -16,13 +17,13 @@ font_data = ExtResource( 1 )
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 1, 0, 0, 1, 0.97168, 1, 0, 1 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
 lifetime_randomness = 0.5
 emission_shape = 2
 emission_box_extents = Vector3( 75, 1, 1 )
@@ -32,9 +33,9 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 360.0
 angle_random = 1.0
-color_ramp = SubResource( 5 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "WordDrop"
 length = 2.0
 tracks/0/type = "value"
@@ -50,7 +51,7 @@ tracks/0/keys = {
 "values": [ Vector2( 125, -100 ), Vector2( 125, 125 ), Vector2( 125, 75 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=7]
 resource_name = "Float"
 length = 2.0
 loop = true
@@ -67,7 +68,7 @@ tracks/0/keys = {
 "values": [ Vector2( 125, 75 ), Vector2( 125, 125 ), Vector2( 125, 75 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 11 ) ],
 "loop": true,
@@ -90,8 +91,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color_ramp = SubResource( 10 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "FlyIn"
+[sub_resource type="Animation" id=12]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -143,9 +143,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 105.0
-margin_top = 65.1254
+margin_top = 70.1984
 margin_right = 877.0
-margin_bottom = 157.125
+margin_bottom = 162.199
 custom_fonts/font = SubResource( 2 )
 text = "Dude with a Rocket Launcher"
 __meta__ = {
@@ -157,21 +157,21 @@ position = Vector2( 378.07, 75.3352 )
 scale = Vector2( 5, 5 )
 amount = 225
 lifetime = 0.5
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )
 
 [node name="WordDrop" type="AnimationPlayer" parent="Label"]
 autoplay = "WordDrop"
-anims/WordDrop = SubResource( 8 )
+anims/WordDrop = SubResource( 6 )
 
 [node name="Float" type="AnimationPlayer" parent="Label"]
-anims/Float = SubResource( 12 )
+anims/Float = SubResource( 7 )
 
 [node name="DudeWithRocketLauncher" type="AnimatedSprite" parent="."]
 position = Vector2( 23.2454, 705.193 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 3 )
+frames = SubResource( 8 )
 animation = "rocket"
-frame = 1
+frame = 4
 playing = true
 
 [node name="FireLauncherRight" type="Particles2D" parent="DudeWithRocketLauncher"]
@@ -183,7 +183,11 @@ process_material = SubResource( 11 )
 
 [node name="FlyIn" type="AnimationPlayer" parent="DudeWithRocketLauncher"]
 method_call_mode = 1
-anims/FlyIn = SubResource( 7 )
+anims/FlyIn = SubResource( 12 )
+
+[node name="IntroSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="pressed" from="StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="animation_finished" from="Label/WordDrop" to="." method="_on_WordDrop_animation_finished"]
