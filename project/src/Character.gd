@@ -29,6 +29,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = rocketJumpPower
 			rocketJumpped = true
+			$RocketLaunch.play()
 			
 	# _process_animation() is called and is a function later that runs animations based off
 	# the controls that are being checked

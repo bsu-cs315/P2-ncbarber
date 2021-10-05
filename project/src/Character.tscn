@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/Sprites/launcherMan.png" type="Texture" id=1]
 [ext_resource path="res://assets/Sprites/launcherMan2.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/rocket_jump/RocketJump4.png" type="Texture" id=10]
 [ext_resource path="res://assets/rocket_jump/RocketJump3.png" type="Texture" id=11]
 [ext_resource path="res://src/ScreenShake.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sounds/RocketLaunchSound.wav" type="AudioStream" id=13]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 0, 0, 1, 0.97168, 1, 0, 1 )
@@ -59,11 +60,6 @@ animations = [ {
 "name": "ducking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "rocket",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walking",
@@ -72,6 +68,11 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jumping",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "rocket",
 "speed": 5.0
 } ]
 
@@ -119,3 +120,6 @@ current = true
 zoom = Vector2( 1.2, 1.2 )
 
 [node name="ScreenShake" parent="Camera" instance=ExtResource( 12 )]
+
+[node name="RocketLaunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )

@@ -167,6 +167,7 @@ position = Vector2( 500, 850 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "rocket"
+frame = 4
 playing = true
 
 [node name="FireLauncherRight" type="Particles2D" parent="DudeWithRocketLauncher"]
