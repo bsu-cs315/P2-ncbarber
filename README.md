@@ -36,7 +36,7 @@ This iteration I had a very enjoyable time taking this more down a path that I w
 - [X] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
 - [X] B-4: The camera follows the character through a world that is larger than one screen.
 - [ ] B-5: Include sound effects and music.
-- [ ] B-6: Include a HUD that tracks game-appropriate data such as score or time remaining.
+- [X] B-6: Include a HUD that tracks game-appropriate data such as score or time remaining.
 - [ ] B-7: Include a clear example of <em>juice</em> and describe it in the <code>README.md</code>.
 - [X] A-1: Generate neither warnings nor errors at runtime.
 - [ ] A-2: Include two clear examples of <em>juice</em> and describe them in the <code>README.md</code>.

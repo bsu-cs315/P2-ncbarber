@@ -25,8 +25,16 @@ __meta__ = {
 [node name="TimeRemaining" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -272.0
+margin_left = -310.0
 margin_bottom = 52.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Time Remaining: X"
+text = "Time Remaining: XX"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
