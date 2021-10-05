@@ -41,25 +41,31 @@ func _process_animation():
 	if Input.is_action_pressed("jump"):
 		$AnimatedSprite.animation = "jumping"
 		$AnimatedSprite.play()
+		$WalkingDirt.visible = false
 		
 	if Input.is_action_pressed("rocket_launch"):
 		$AnimatedSprite.animation = "rocket"
 		$AnimatedSprite.play()
+		$WalkingDirt.visible = false
 	
 	if Input.is_action_pressed("right") and is_on_floor():
 		$AnimatedSprite.animation = "walking"
 		$AnimatedSprite.play()
 		$AnimatedSprite.flip_h = false
+		$WalkingDirt.visible = true
 		
 	if Input.is_action_pressed("left") and is_on_floor():
 		$AnimatedSprite.animation = "walking"
 		$AnimatedSprite.play()
 		$AnimatedSprite.flip_h = true
+		$WalkingDirt.visible = true
 
 	if velocity.x == 0 and is_on_floor():
 		$AnimatedSprite.animation = "idle"
 		$AnimatedSprite.play()
+		$WalkingDirt.visible = false
 
 	if Input.is_action_pressed("down") and is_on_floor() and velocity.x == 0:
 		$AnimatedSprite.animation = "ducking"
 		$AnimatedSprite.play()
+		$WalkingDirt.visible = false

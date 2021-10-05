@@ -68,7 +68,8 @@ script = ExtResource( 4 )
 [node name="WalkingDirt" type="Particles2D" parent="."]
 position = Vector2( 1.93285, 61.7219 )
 scale = Vector2( 5, 5 )
-amount = 25
+amount = 15
+lifetime = 0.5
 process_material = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
