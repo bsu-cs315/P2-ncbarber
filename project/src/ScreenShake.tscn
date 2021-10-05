@@ -13,4 +13,4 @@ script = ExtResource( 1 )
 one_shot = true
 
 [connection signal="timeout" from="Frequency" to="." method="_on_Frequency_timeout"]
-[connection signal="timeout" from="Duration" to="." method="_on_Duraction_timeout"]
+[connection signal="timeout" from="Duration" to="." method="_on_Duration_timeout"]

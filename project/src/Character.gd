@@ -8,6 +8,7 @@ var isFlipped := false
 var jumpped := false
 var rocketJumpped := false
 var velocity := Vector2()
+var air_time := 0
 
 
 func _physics_process(delta):
@@ -30,13 +31,18 @@ func _physics_process(delta):
 			
 	_process_animation()
 	velocity.y += gravity * delta
+	
+	var collision = move_and_collide(velocity * delta)
+	if !collision and rocketJumpped:
+		$Camera/ScreenShake.start()
+	
 	if jumpped and is_on_floor():
 		jumpped = false
 		
 	if rocketJumpped and is_on_floor():
 		rocketJumpped = false
 		
-	velocity = move_and_slide(velocity, Vector2(0,-1))\
+	velocity = move_and_slide(velocity, Vector2(0,-1))
 	
 	
 func _process_animation():

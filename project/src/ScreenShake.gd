@@ -7,11 +7,11 @@ var amplitude := 0
 
 onready var camera = get_parent()
 
-func start(duration = 0.2, frequency = 15, amplitude = 16):
-	self.amplitude = amplitude
+func start(_duration = 0.2, _frequency = 15, _amplitude = 16):
+	self.amplitude = _amplitude
 	
-	$Duraction.wait_time = duration
-	$Frequency.wait_time = 1 / float(frequency)
+	$Duration.wait_time = _duration
+	$Frequency.wait_time = 1 / float(_frequency)
 	$Duration.start()
 	$Frequency.start()
 	
