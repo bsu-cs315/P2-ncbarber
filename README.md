@@ -14,7 +14,10 @@ Controls
 
 ## Reflection
 
-This iteration I had a very enjoyable time taking this more down a path that I wanted. I used a lot more custom items for animations. I thought that adding this aspect to the project made it feel so much more my own. All of these parts of the project made it a lot more enjoyable and I feel like I was able to make progress very quickly. Something that I was very happy to be able to find out is that I can make certain parts of a TileMap that can be passed one way through, that aspect was something that I didn't know was possible and was such a great discovery! Im looking forward to updating this project and making is a lot better.
+I think that this project I took a big leap into these different outside tools that I could use in order to make some really nice assets for a project. 
+I had a lot of fun working on making little tunes as well as animations and working with particles.
+Overall this iteration showed me that I am able to figure out a lot of the ideas that I want to do for a basic game like this.
+I am really looking forward to building more things that I but this level of ideas and creativity into. 
 
 ## Juice
 
@@ -36,11 +39,11 @@ First Item added for juice was particles for the character, as well as particles
 - [X] C-8: The player's character can jump up and onto tiles.
 - [X] C-9: The player's character falls down when walking off a ledge.
 - [X] C-10: Include a full player experience loop: title, gameplay, end.
-- [ ] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
+- [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The source code and project structure comply with our adopted style guides.
 - [X] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
 - [X] B-4: The camera follows the character through a world that is larger than one screen.
-- [ ] B-5: Include sound effects and music.
+- [X] B-5: Include sound effects and music.
 - [X] B-6: Include a HUD that tracks game-appropriate data such as score or time remaining.
 - [X] B-7: Include a clear example of <em>juice</em> and describe it in the <code>README.md</code>.
 - [X] A-1: Generate neither warnings nor errors at runtime.
@@ -50,7 +53,7 @@ First Item added for juice was particles for the character, as well as particles
 - [X] ⭐ Include parallax scrolling in the background.
 - [X] ⭐ Include tiles that can be passed in one direction, such as being able to jump up through a tile and land atop it.
 
-With all of these requirments, after looking over all of them, I believe that I have done more than enough require to recieve an A for this iteration.
+With all of these requirments, after looking over all of them, I believe that I have done more than enough require to recieve an B for this iteration so far.
 
 ## Third-Party Resources
 
@@ -58,4 +61,4 @@ With all of these requirments, after looking over all of them, I believe that I 
 - [Kenny's Background Elements Redux](https://kenney.nl/assets/background-elements-redux), licensed under 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 - [Francois One Designed by Vernon Adams](https://fonts.google.com/specimen/Francois+One#standard-styles), licensed under [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-- [Raffaele Picc - raffaelepicca.com](https://github.com/RPicster/Godot-particle-and-vfx-textures), licensed under [CC0 1.0 Universial](https://github.com/RPicster/Godot-particle-and-vfx-textures/blob/main/LICENSE)
+- [Raffaele Picc - raffaelepicca.com(Coin Particle Features)](https://github.com/RPicster/Godot-particle-and-vfx-textures), licensed under [CC0 1.0 Universial](https://github.com/RPicster/Godot-particle-and-vfx-textures/blob/main/LICENSE)

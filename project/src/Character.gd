@@ -9,6 +9,7 @@ var jumpped := false
 var rocketJumpped := false
 var velocity := Vector2()
 
+
 func _physics_process(delta):
 	velocity.x = 0
 	if Input.is_action_pressed("right"):
@@ -35,7 +36,7 @@ func _physics_process(delta):
 	if rocketJumpped and is_on_floor():
 		rocketJumpped = false
 		
-	velocity = move_and_slide(velocity, Vector2(0,-1))
+	velocity = move_and_slide(velocity, Vector2(0,-1))\
 	
 	
 func _process_animation():
