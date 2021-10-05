@@ -69,6 +69,7 @@ func _on_Coin_Entered(body, coin):
 	if body == character:
 		coin.queue_free()
 		score -= 1
+		$CoinCollect.play()
 
 
 func restart_level():
