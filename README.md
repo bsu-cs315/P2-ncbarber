@@ -16,6 +16,11 @@ Controls
 
 This iteration I had a very enjoyable time taking this more down a path that I wanted. I used a lot more custom items for animations. I thought that adding this aspect to the project made it feel so much more my own. All of these parts of the project made it a lot more enjoyable and I feel like I was able to make progress very quickly. Something that I was very happy to be able to find out is that I can make certain parts of a TileMap that can be passed one way through, that aspect was something that I didn't know was possible and was such a great discovery! Im looking forward to updating this project and making is a lot better.
 
+## Juice
+
+First Item added for juice was particles for the character, as well as particles for the coins.
+
+
 ## Self-Evaluation
 
 - [ ] D-1: The repository link is submitted to Canvas before the project deadline.
@@ -37,7 +42,7 @@ This iteration I had a very enjoyable time taking this more down a path that I w
 - [X] B-4: The camera follows the character through a world that is larger than one screen.
 - [ ] B-5: Include sound effects and music.
 - [X] B-6: Include a HUD that tracks game-appropriate data such as score or time remaining.
-- [ ] B-7: Include a clear example of <em>juice</em> and describe it in the <code>README.md</code>.
+- [X] B-7: Include a clear example of <em>juice</em> and describe it in the <code>README.md</code>.
 - [X] A-1: Generate neither warnings nor errors at runtime.
 - [ ] A-2: Include two clear examples of <em>juice</em> and describe them in the <code>README.md</code>.
 - [X] A-3: Earn two stars.

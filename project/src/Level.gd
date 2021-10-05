@@ -1,7 +1,8 @@
 extends Node2D
 
+
 var character : KinematicBody2D
-var score := 5
+var score := 1
 var timer := 0
 var running := true
 
@@ -40,11 +41,12 @@ func _process(_delta):
 	$HUD/TimeRemaining.text = "Time Remaining: %d" % timer
 	
 	if score == 0:
-		# Run Game Over Screen
-		score = 0
-	if timer == 0:
-		# Run You lose
-		timer = 0
+		# Run Game Over Screen With Win
+		var _game_over := get_tree().change_scene("res://src/Winner.tscn")
+		
+	elif timer == 0:
+		var _game_over := get_tree().change_scene("res://src/GameOver.tscn")
+
 	if Input.is_action_pressed("restart"):
 		restart_level()
 
@@ -66,7 +68,6 @@ func _on_Coin_Entered(body, coin):
 	if body == character:
 		coin.queue_free()
 		score -= 1
-		#print("Score: ", score)
 
 
 func restart_level():
