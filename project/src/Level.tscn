@@ -254,4 +254,4 @@ tile_data = PoolIntArray( -1310667, 1, 0, -1310666, 1, 0, -1245131, 1, 0, -12451
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="Coin" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2550.43, 71.0533 )
+position = Vector2( 3313.83, -493.38 )
