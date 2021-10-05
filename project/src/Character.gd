@@ -3,7 +3,7 @@ extends KinematicBody2D
 var gravity := 600
 var jumpPower := -350
 var rocketJumpPower := -500
-var speed := 250
+var speed := 300
 var isFlipped := false
 var jumpped := false
 var rocketJumpped := false
