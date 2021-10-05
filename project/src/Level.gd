@@ -19,11 +19,11 @@ func _ready():
 	if generatedNumber == 1:
 		spawn_coin(Vector2(-323, 217))
 		spawn_coin(Vector2(3040, -934))
-		spawn_coin(Vector2(-295, 225))
+		spawn_coin(Vector2(2932, 715))
 		spawn_coin(Vector2(randomNumber.randi_range(1050, 2585), 465))
 	elif generatedNumber == 2:
 		spawn_coin(Vector2(0, -530))
-		spawn_coin(Vector2(2932, 715))
+		spawn_coin(Vector2(-295, 225))
 		spawn_coin(Vector2(2144, -295))
 		spawn_coin(Vector2(randomNumber.randi_range(1050, 2585), 465))
 	elif generatedNumber == 3:
