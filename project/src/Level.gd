@@ -2,7 +2,7 @@ extends Node2D
 
 
 var character : KinematicBody2D
-var score := 1
+var score := 5
 var timer := 0
 var running := true
 
