@@ -4,6 +4,7 @@ var gravity := 600
 var jumpPower := -350
 var rocketJumpPower := -500
 var speed := 250
+var isFlipped := false
 var jumpped := false
 var rocketJumpped := false
 var velocity := Vector2()
@@ -42,30 +43,46 @@ func _process_animation():
 		$AnimatedSprite.animation = "jumping"
 		$AnimatedSprite.play()
 		$WalkingDirt.visible = false
+		$FireLauncherRight.visible = false
+		$FireLauncherLeft.visible = false
 		
 	if Input.is_action_pressed("rocket_launch"):
 		$AnimatedSprite.animation = "rocket"
 		$AnimatedSprite.play()
 		$WalkingDirt.visible = false
+		if isFlipped:
+			$FireLauncherLeft.visible = true
+		else:
+			$FireLauncherRight.visible = true
 	
 	if Input.is_action_pressed("right") and is_on_floor():
 		$AnimatedSprite.animation = "walking"
 		$AnimatedSprite.play()
 		$AnimatedSprite.flip_h = false
+		isFlipped = false
 		$WalkingDirt.visible = true
+		$FireLauncherRight.visible = false
+		$FireLauncherLeft.visible = false
 		
 	if Input.is_action_pressed("left") and is_on_floor():
 		$AnimatedSprite.animation = "walking"
 		$AnimatedSprite.play()
 		$AnimatedSprite.flip_h = true
+		isFlipped = true
 		$WalkingDirt.visible = true
+		$FireLauncherRight.visible = false
+		$FireLauncherLeft.visible = false
 
 	if velocity.x == 0 and is_on_floor():
 		$AnimatedSprite.animation = "idle"
 		$AnimatedSprite.play()
 		$WalkingDirt.visible = false
+		$FireLauncherRight.visible = false
+		$FireLauncherLeft.visible = false
 
 	if Input.is_action_pressed("down") and is_on_floor() and velocity.x == 0:
 		$AnimatedSprite.animation = "ducking"
 		$AnimatedSprite.play()
 		$WalkingDirt.visible = false
+		$FireLauncherRight.visible = false
+		$FireLauncherLeft.visible = false
