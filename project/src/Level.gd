@@ -70,9 +70,9 @@ func spawn_coin(spawnPosition):
 
 func _on_Coin_Entered(body, coin):
 	if body == character:
+		$CoinCollect.play()
 		coin.queue_free()
 		score -= 1
-		$CoinCollect.play()
 
 
 func restart_level():

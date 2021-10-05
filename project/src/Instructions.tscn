@@ -1,17 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/fonts/FrancoisOne-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://src/GameOver.gd" type="Script" id=2]
-[ext_resource path="res://assets/sounds/LoseSong.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/rocket_jump/RocketJump2.png" type="Texture" id=4]
-[ext_resource path="res://assets/rocket_jump/RocketJump5.png" type="Texture" id=5]
-[ext_resource path="res://assets/rocket_jump/RocketJump.png" type="Texture" id=6]
-[ext_resource path="res://assets/rocket_jump/RocketJump4.png" type="Texture" id=7]
-[ext_resource path="res://assets/rocket_jump/RocketJump3.png" type="Texture" id=8]
+[ext_resource path="res://assets/rocket_jump/RocketJump2.png" type="Texture" id=1]
+[ext_resource path="res://assets/rocket_jump/RocketJump5.png" type="Texture" id=2]
+[ext_resource path="res://assets/rocket_jump/RocketJump.png" type="Texture" id=3]
+[ext_resource path="res://assets/rocket_jump/RocketJump4.png" type="Texture" id=4]
+[ext_resource path="res://assets/rocket_jump/RocketJump3.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/FrancoisOne-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://src/Instructions.gd" type="Script" id=7]
+[ext_resource path="res://assets/sounds/LoseSong.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=11]
 size = 32
-font_data = ExtResource( 1 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="GDScript" id=12]
 script/source = "extends Button
@@ -34,11 +34,15 @@ func _ready():
 
 [sub_resource type="DynamicFont" id=13]
 size = 64
-font_data = ExtResource( 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 24
+font_data = ExtResource( 6 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "rocket",
 "speed": 5.0
@@ -47,7 +51,7 @@ animations = [ {
 [sub_resource type="Gradient" id=15]
 colors = PoolColorArray( 1, 0, 0, 1, 1, 0.960938, 0, 1 )
 
-[sub_resource type="GradientTexture" id=18]
+[sub_resource type="GradientTexture" id=10]
 gradient = SubResource( 15 )
 
 [sub_resource type="ParticlesMaterial" id=16]
@@ -57,10 +61,11 @@ flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 18 )
+color_ramp = SubResource( 10 )
 
 [sub_resource type="Animation" id=17]
-length = 3.5
+length = 5.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
@@ -68,16 +73,16 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -119.803, 587.361 ), Vector2( 91.2201, 414.502 ), Vector2( 113.669, 387.563 ), Vector2( 131.629, 434.706 ), Vector2( 214.691, 344.909 ), Vector2( 214.691, 333.685 ), Vector2( 210.201, 270.827 ), Vector2( 198.976, 850.017 ) ]
+"values": [ Vector2( 500, 850 ), Vector2( 500, 350 ), Vector2( 500, 450 ), Vector2( 500, 350 ), Vector2( 500, 450 ), Vector2( 500, 850 ) ]
 }
 
-[node name="GameOver" type="Control"]
+[node name="Instructions" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,22 +95,6 @@ anchor_bottom = 1.035
 color = Color( 0.701961, 0.443137, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
-}
-
-[node name="StartGame" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -81.5
-margin_top = 25.0
-margin_right = 81.5
-margin_bottom = 77.0
-custom_fonts/font = SubResource( 11 )
-text = "Play Again?"
-script = SubResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
 }
 
 [node name="MainMenu" type="Button" parent="."]
@@ -124,28 +113,60 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameOverLabel" type="Label" parent="."]
+[node name="HowtoPlayLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -160.0
+margin_top = 50.0
+margin_right = 160.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 13 )
+text = "How to Play:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -395.0
+margin_top = -93.5
+margin_bottom = 93.5
+custom_fonts/font = SubResource( 18 )
+text = "(W or Up Arrow) - Regular Jump
+(A or Left Arrow) - Move Left 
+(D or Right Arrow) - Move Right
+(Space Bar) - Rocket Jump!
+(S or Down Arrow) - Crouch (For fun :D)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameGoalLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -131.0
-margin_top = -200.0
-margin_right = 131.0
-margin_bottom = -13.0
-custom_fonts/font = SubResource( 13 )
-text = "You Lose.
-Do better."
+margin_left = -511.789
+margin_top = -86.7653
+margin_right = -40.7893
+margin_bottom = 24.2347
+custom_fonts/font = SubResource( 18 )
+text = "Goal of the game is to collect 
+all the coins! You have enough 
+time until the timer runs out.
+Good Luck and be quick!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DudeWithRocketLauncher" type="AnimatedSprite" parent="."]
-position = Vector2( 198.976, 850.017 )
+position = Vector2( 500, 850 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 14 )
 animation = "rocket"
-frame = 3
 playing = true
 
 [node name="FireLauncherRight" type="Particles2D" parent="DudeWithRocketLauncher"]
@@ -160,10 +181,9 @@ autoplay = "FlyIn"
 method_call_mode = 1
 anims/FlyIn = SubResource( 17 )
 
-[node name="GameOverSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+[node name="IntroSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 volume_db = -2.5
 autoplay = true
 
-[connection signal="pressed" from="StartGame" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]

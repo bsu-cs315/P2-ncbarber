@@ -1,14 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/fonts/FrancoisOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Winner.gd" type="Script" id=2]
 [ext_resource path="res://assets/sounds/WinTheme.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/rocket_jump/RocketJump2.png" type="Texture" id=4]
+[ext_resource path="res://assets/rocket_jump/RocketJump5.png" type="Texture" id=5]
+[ext_resource path="res://assets/rocket_jump/RocketJump.png" type="Texture" id=6]
+[ext_resource path="res://assets/rocket_jump/RocketJump4.png" type="Texture" id=7]
+[ext_resource path="res://assets/rocket_jump/RocketJump3.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=11]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=12]
 script/source = "extends Button
 
 
@@ -27,11 +32,11 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=13]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=14]
 script/source = "extends Button
 
 
@@ -50,9 +55,47 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=15]
 size = 64
 font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "rocket",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=17]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.960938, 0, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 20 )
+
+[sub_resource type="Animation" id=19]
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -122.905, 642.197 ), Vector2( 83.722, 417.931 ), Vector2( 83.722, 417.931 ), Vector2( 260.111, 241.542 ), Vector2( 562.492, 160.907 ), Vector2( 820, 160 ), Vector2( 820, 210 ), Vector2( 820, 160 ), Vector2( 820, 210 ), Vector2( 820, 160 ), Vector2( -198.017, 245.675 ) ]
+}
 
 [node name="Winner" type="Control"]
 anchor_right = 1.0
@@ -82,9 +125,9 @@ margin_left = -81.5
 margin_top = 25.0
 margin_right = 81.5
 margin_bottom = 77.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Play Again?"
-script = SubResource( 2 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,9 +141,9 @@ margin_left = -81.5
 margin_top = 125.0
 margin_right = 81.5
 margin_bottom = 177.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 13 )
 text = "Main Menu"
-script = SubResource( 4 )
+script = SubResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,11 +157,31 @@ margin_left = -116.5
 margin_top = -100.0
 margin_right = 116.5
 margin_bottom = -8.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 15 )
 text = "You Win!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DudeWithRocketLauncher" type="AnimatedSprite" parent="."]
+position = Vector2( 836.094, 188.068 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 16 )
+animation = "rocket"
+frame = 4
+playing = true
+
+[node name="FireLauncherRight" type="Particles2D" parent="DudeWithRocketLauncher"]
+position = Vector2( 150.024, 231.565 )
+scale = Vector2( 20, 20 )
+amount = 15
+lifetime = 0.5
+process_material = SubResource( 18 )
+
+[node name="FlyIn" type="AnimationPlayer" parent="DudeWithRocketLauncher"]
+autoplay = "FlyIn"
+method_call_mode = 1
+anims/FlyIn = SubResource( 19 )
 
 [node name="WinnerSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

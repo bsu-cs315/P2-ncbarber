@@ -4,8 +4,6 @@
 
 ## How to Play
 
-
-
 Controls
 - W or Up Arrow to Jump
 - A or Left Arrow to move left
@@ -18,11 +16,14 @@ I think that this project I took a big leap into these different outside tools t
 I had a lot of fun working on making little tunes as well as animations and working with particles.
 Overall this iteration showed me that I am able to figure out a lot of the ideas that I want to do for a basic game like this.
 I am really looking forward to building more things that I but this level of ideas and creativity into. 
+I definetly have started to build more confidence in my ideas, and I'm looking forward to being able to do things like game jams, and this one week project next week!
 
 ## Juice
 
-First Item added for juice was particles for the character, as well as particles for the coins.
+First Item added for juice was particles for the character, as well as particles for the coins. 
+I thought that throwing those in added to the movement, and made the coins a bit more interesting.
 The second item that I added for some "juiciness" was a screenshake whenever the character uses their rocket jump!
+I thought that the rocketjump was sort of a key idea when coming up with it, so being able to spice it up a little just made sense.
 
 
 ## Self-Evaluation
@@ -41,7 +42,7 @@ The second item that I added for some "juiciness" was a screenshake whenever the
 - [X] C-9: The player's character falls down when walking off a ledge.
 - [X] C-10: Include a full player experience loop: title, gameplay, end.
 - [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
-- [ ] B-2: The source code and project structure comply with our adopted style guides.
+- [X] B-2: The source code and project structure comply with our adopted style guides.
 - [X] B-3: There is a sprite element in the level that the player can interact with, such as a collectible, an enemy, a book, or a switch.
 - [X] B-4: The camera follows the character through a world that is larger than one screen.
 - [X] B-5: Include sound effects and music.
@@ -54,7 +55,7 @@ The second item that I added for some "juiciness" was a screenshake whenever the
 - [X] ⭐ Include parallax scrolling in the background.
 - [X] ⭐ Include tiles that can be passed in one direction, such as being able to jump up through a tile and land atop it.
 
-With all of these requirments, after looking over all of them, I believe that I have done more than enough require to recieve an B for this iteration so far.
+With all of these requirments, after looking over all of them, I believe that I have done more than enough require to recieve an A for this iteration.
 
 ## Third-Party Resources
 
