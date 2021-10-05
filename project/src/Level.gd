@@ -16,7 +16,6 @@ func _ready():
 	# Here we are generating a random number for some variation and replayability
 	# I have some set points and some that are randomized
 	var generatedNumber := randi()%4+1
-	print(generatedNumber)
 	if generatedNumber == 1:
 		spawn_coin(Vector2(3040, -934))
 		spawn_coin(Vector2(2932, 715))
